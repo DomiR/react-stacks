@@ -6,16 +6,17 @@
  */
 
 import * as React from 'react';
+import { View, ViewProps } from 'react-native';
 import { CommonStackProps, spacerFactory, SpacerProps, stackFactory } from './stacks';
 
 /**
  * Spacer
  */
 export { SpacerProps } from './stacks';
-export const Spacer: React.FunctionComponent<SpacerProps> = spacerFactory('div');
+export const Spacer: React.FunctionComponent<SpacerProps> = spacerFactory(View);
 
-export type StackProps = CommonStackProps & React.HTMLAttributes<HTMLDivElement>;
-export const Stack: React.FC<StackProps> = stackFactory('div');
+export type StackProps = CommonStackProps & ViewProps;
+export const Stack: React.FC<StackProps> = stackFactory(View);
 
 type StackVariantProps = Omit<StackProps, 'variant'>;
 export const VStack: React.FunctionComponent<StackVariantProps> = props => (
