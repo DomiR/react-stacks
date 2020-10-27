@@ -13,10 +13,10 @@ import { CommonStackProps, spacerFactory, SpacerProps, stackFactory } from './st
  * Spacer
  */
 export { SpacerProps } from './stacks';
-export const Spacer: React.FunctionComponent<SpacerProps> = spacerFactory(View);
+export const Spacer: React.FunctionComponent<SpacerProps> = spacerFactory(View, '');
 
 export type StackProps = CommonStackProps & ViewProps;
-export const Stack: React.FC<StackProps> = stackFactory(View);
+export const Stack: React.FC<StackProps> = stackFactory(View, '');
 
 type StackVariantProps = Omit<StackProps, 'variant'>;
 export const VStack: React.FunctionComponent<StackVariantProps> = props => (

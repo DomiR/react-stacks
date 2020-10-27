@@ -12,10 +12,10 @@ import { CommonStackProps, spacerFactory, SpacerProps, stackFactory } from './st
  * Spacer
  */
 export { SpacerProps } from './stacks';
-export const Spacer: React.FunctionComponent<SpacerProps> = spacerFactory('div');
+export const Spacer: React.FunctionComponent<SpacerProps> = spacerFactory('div', 'px');
 
 export type StackProps = CommonStackProps & React.HTMLAttributes<HTMLDivElement>;
-export const Stack: React.FC<StackProps> = stackFactory('div');
+export const Stack: React.FC<StackProps> = stackFactory('div', 'px');
 
 type StackVariantProps = Omit<StackProps, 'variant'>;
 export const VStack: React.FunctionComponent<StackVariantProps> = props => (

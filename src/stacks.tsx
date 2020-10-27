@@ -11,12 +11,12 @@ import * as React from 'react';
  * Spacer
  */
 export type SpacerProps = { spacing?: number; variant: 'row' | 'column' };
-export function spacerFactory(element: any): React.FunctionComponent<SpacerProps> {
+export function spacerFactory(element: any, unit: string): React.FunctionComponent<SpacerProps> {
 	return props =>
 		React.createElement(element, {
 			style: {
-				height: props.variant === 'column' ? `${props.spacing}px` : '100%',
-				width: props.variant === 'column' ? '100%' : `${props.spacing}px`,
+				height: props.variant === 'column' ? `${props.spacing}${unit}` : '100%',
+				width: props.variant === 'column' ? '100%' : `${props.spacing}$${unit}`,
 				flexShrink: 0,
 				flexGrow: 0,
 			},
@@ -45,8 +45,8 @@ export type CommonStackProps = {
 	variant: 'row' | 'column';
 	debug?: boolean;
 };
-export function stackFactory(element: any): React.FC<CommonStackProps> {
-	const Spacer = spacerFactory(element);
+export function stackFactory(element: any, unit: string): React.FC<CommonStackProps> {
+	const Spacer = spacerFactory(element, unit);
 
 	return props => {
 		const {
