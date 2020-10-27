@@ -14,8 +14,8 @@ export type SpacerProps = { spacing?: number; variant: 'row' | 'column' };
 export const Spacer: React.FunctionComponent<SpacerProps> = props => (
 	<div
 		style={{
-			height: props.variant === 'column' ? props.spacing : '100%',
-			width: props.variant === 'column' ? '100%' : props.spacing,
+			height: props.variant === 'column' ? `${props.spacing}px` : '100%',
+			width: props.variant === 'column' ? '100%' : `${props.spacing}px`,
 			flexShrink: 0,
 			flexGrow: 0,
 		}}
