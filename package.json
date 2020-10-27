@@ -6,7 +6,9 @@
 	"private": false,
 	"files": [
 		"dist",
-		"src"
+		"src",
+		"native.js",
+		"native.d.ts"
 	],
 	"engines": {
 		"node": ">=10"
