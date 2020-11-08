@@ -71,18 +71,16 @@ export const Stack: React.FC<StackProps> = props => {
 	}
 	return (
 		<div
-			style={[
-				flex && { flex: 1 },
-				{
+			style={{
+					...(debug ? { backgroundColor: 'green' } : {}),
+					...(flex ? { flex: 1 } : {}),
 					padding,
 					margin,
 					flexDirection: variant,
 					alignItems,
 					justifyContent,
-				},
-				style,
-				debug && { backgroundColor: 'green' },
-			]}
+					...style,
+			}}
 			{...restProps}
 		>
 			{newChildren}
