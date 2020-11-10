@@ -76,6 +76,7 @@ export const Stack: React.FC<StackProps> = props => {
 					...(flex ? { flex: 1 } : {}),
 					padding,
 					margin,
+					display: 'flex',
 					flexDirection: variant,
 					alignItems,
 					justifyContent,
