@@ -36,7 +36,6 @@
 	},
 	"name": "@domir/react-stacks",
 	"author": "DomiR",
-	"module": "dist/react-stacks.esm.js",
 	"devDependencies": {
 		"@types/jest": "^26.0.14",
 		"@types/react": "^16.9.49",
