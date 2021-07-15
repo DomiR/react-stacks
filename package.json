@@ -19,7 +19,7 @@
 		"build": "tsc",
 		"b": "yarn run build",
 		"test": "tsdx test --passWithNoTests",
-		"lint": "tsdx lint",
+		"lint": "tsdx lint src test",
 		"prepare": "yarn build",
 		"release": "yarn run release-it"
 	},
@@ -28,7 +28,7 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "tsdx lint"
+			"pre-commit": "yarn run lint"
 		}
 	},
 	"name": "@domir/react-stacks",
