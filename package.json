@@ -15,7 +15,9 @@
 	},
 	"scripts": {
 		"start": "tsdx watch",
+		"dev": "yarn run start",
 		"build": "tsc",
+		"b": "yarn run build",
 		"test": "tsdx test --passWithNoTests",
 		"lint": "tsdx lint",
 		"prepare": "yarn build",
