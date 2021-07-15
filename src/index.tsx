@@ -10,7 +10,7 @@ import * as React from 'react';
 /**
  * Spacer
  */
-export type SpacerProps = { spacing?: number; variant: 'row' | 'column' };
+export type SpacerProps = { spacing?: number | string; variant: 'row' | 'column' };
 export const Spacer: React.FunctionComponent<SpacerProps> = props => (
 	<div
 		style={{
@@ -35,10 +35,10 @@ type FlexJustifyType =
 	| 'space-evenly';
 
 export type StackProps = {
-	spacing?: number;
-	padding?: number;
-	margin?: number;
-	flex?: boolean;
+	spacing?: number | string;
+	padding?: number | string;
+	margin?: number | string;
+	flex?: boolean | number;
 	alignItems?: FlexAlignType;
 	justifyContent?: FlexJustifyType;
 	variant: 'row' | 'column';
@@ -58,7 +58,7 @@ export const Stack: React.FC<StackProps> = props => {
 		flex = false,
 		debug = false,
 		...restProps
-	} = props as any;
+	} = props;
 	const oldChildren = React.Children.toArray(children);
 	const newChildren: React.ReactNode[] = [];
 	for (let i = 0; i < oldChildren.length; i++) {
@@ -72,15 +72,15 @@ export const Stack: React.FC<StackProps> = props => {
 	return (
 		<div
 			style={{
-					...(debug ? { backgroundColor: 'green' } : {}),
-					...(flex ? { flex: 1 } : {}),
-					padding,
-					margin,
-					display: 'flex',
-					flexDirection: variant,
-					alignItems,
-					justifyContent,
-					...style,
+				...(debug ? { backgroundColor: 'green' } : {}),
+				...(typeof flex === 'number' ? { flex } : flex ? { flex: 1 } : {}),
+				padding,
+				margin,
+				display: 'flex',
+				flexDirection: variant,
+				alignItems,
+				justifyContent,
+				...style,
 			}}
 			{...restProps}
 		>
