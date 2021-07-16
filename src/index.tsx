@@ -11,16 +11,19 @@ import * as React from 'react';
  * Spacer
  */
 export type SpacerProps = { spacing?: number | string; variant: 'row' | 'column' };
-export const Spacer: React.FunctionComponent<SpacerProps> = props => (
-	<div
-		style={{
-			height: props.variant === 'column' ? `${props.spacing}px` : '100%',
-			width: props.variant === 'column' ? '100%' : `${props.spacing}px`,
-			flexShrink: 0,
-			flexGrow: 0,
-		}}
-	/>
-);
+export const Spacer: React.FunctionComponent<SpacerProps> = props => {
+	const width = typeof props.spacing === 'number' ? `${props.spacing}px` : props.spacing;
+	return (
+		<div
+			style={{
+				height: props.variant === 'column' ? width : '100%',
+				width: props.variant === 'column' ? '100%' : width,
+				flexShrink: 0,
+				flexGrow: 0,
+			}}
+		/>
+	);
+};
 
 /**
  * Stacks
