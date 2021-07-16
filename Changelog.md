@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/DomiR/react-stacks/compare/v1.5.0...v1.5.1) (2021-07-16)
+
+
+### Bug Fixes
+
+* **width:** should allow string width of spacer ([007bb2b](https://github.com/DomiR/react-stacks/commit/007bb2b8ee3f523b2b3dd4c88da8795b0e09d75e))
+
 # [1.5.0](https://github.com/DomiR/react-stacks/compare/v1.4.3...v1.5.0) (2021-07-15)
 
 
